@@ -1,0 +1,4 @@
+<?php
+
+echo"Open source OpenInviter (Open Inviter) is an import contacts (addressbook) script from email providers like GMail, OperaMail, Rediff, Live/Hotmail, AOL, GMX.net, Mail.com, Rambler, Yandex, Yahoo!, KataMail, Lycos, Mail.ru or content management systems (aka CMS) like Drupal, Wordpress, Social Engine, Joomla, JamRoom, PunBB, PhpBB, SimpleMachines Forum (SMF) or social portals like Hi5, Twitter, MySpace, Orkut, Facebook, Friendster, LinkedIn written in PHP 5 (no database required but cURL or wget required) and running on any webserver (tested on Apache) offering advanced tell a friend features. OpenInviter is a self hosted solution that does not use a third party gateway (or API) to import contacts.Download it at: <a href='http://openinviter.com'>OpenInviter</a>";
+?>

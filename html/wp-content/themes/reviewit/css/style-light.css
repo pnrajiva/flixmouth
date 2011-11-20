@@ -1,0 +1,541 @@
+/*************************** General Styling ***************************/
+
+/* Page Styling */
+body {
+background: #f9f9f9 url(../images/page_bg_3.png) repeat-x;
+color: #808080;
+}
+
+/* Text Styling */
+a, #nav ul a:hover, #nav ul .current-menu-item a, #nav ul .current-menu-ancestor a, #nav ul .current-menu-item ul li a:hover, #nav ul .current-menu-ancestor ul li a:hover, #footer a:hover, #tabs-box .tab a:hover, #tabs-box .tab-active a, .widget a:hover, #recent-comments-widget a, .review-box-text a:hover, #comments-title span a:hover, .cancel-comment-reply a:hover {
+color: #000000;
+}
+a:hover {
+color: #808080;
+}
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+color: #000000;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+color: #808080;
+}
+
+/* Form Styling */
+input,
+textarea,
+select {
+color: #808080;
+}
+input[type="submit"],
+input[type="reset"] {
+color: #808080;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+background: #d6d6d6;
+}
+fieldset {
+border: 1px solid #d6d6d6;
+}
+
+/* Table Styling */
+table {
+padding-bottom: 20px;
+}
+th {
+background: #d6d6d6;
+}
+td {
+border-top: 1px solid #d6d6d6;
+}
+
+/* Other Styling */
+hr {
+border-top: 1px solid #d6d6d6;
+}
+pre, code {
+background: #ffffff;
+border-top: 1px solid #d6d6d6;
+border-bottom: 1px solid #d6d6d6;
+}
+
+/* Image Styling */
+.gallery img {
+border: 1px solid #d6d6d6 !important;
+}
+div.light_square .pp_left,
+div.light_square .pp_middle,
+div.light_square .pp_right,
+div.light_square .pp_content {
+background: #fff !important;
+}
+div.light_square .pp_content .ppt,
+div.light_square #pp_full_res .pp_inline {
+color: #808080 !important;
+}
+
+
+/*************************** Header ***************************/
+
+/* Header */
+#header-top {
+background: url(../images/light/header_top.png) no-repeat;
+}
+
+#header-bottom {
+background: url(../images/light/header_bottom.png) no-repeat;
+}
+
+/* Login */
+#login span {
+color: #d6d6d6;
+}
+
+/* Search */
+#searchbar {
+background: url(../images/light/searchbar.png) no-repeat left top;
+}
+#searchbar:focus {
+background: url(../images/light/searchbar.png) no-repeat left bottom;
+}
+#searchsubmit {
+float: left;
+background: url(../images/light/searchbar.png) no-repeat right top;
+}
+#searchsubmit:hover {
+background: url(../images/light/searchbar.png) no-repeat right bottom;
+}
+
+/* Logo */
+.logo-default {
+background: url(../images/light/logo.png) no-repeat;
+}
+
+/* Display Options */
+#display-compact {
+background: url(../images/light/display_options.png) no-repeat left;
+}
+#display-extended {
+background: url(../images/light/display_options.png) no-repeat right;
+}
+
+.blog-image, .post-button, .thumbnail, .tab-image, #review-page-image, #review-stats, #review-page-user-rating .ratingbutton, .review-list-image, #recent-comments-widget .avatar, .latest-members-widget img, .profile-avatar, .comment-avatar img, .comment-body, .aligncenter, .alignleft, .alignright, input, textarea, select, input[type="submit"], input[type="reset"], .widget .item-avatar img {
+background: #f7f7f7 url(images/gradient.png) repeat-x;
+border: 1px solid #d6d6d6;
+}
+
+
+/*************************** Navigation ***************************/
+
+/* Nav Wrapper */
+#nav-left {
+background: url(../images/light/nav.png) no-repeat left top;
+}
+#nav ul, #nav ul ul{
+background: url(../images/light/nav.png) no-repeat right top;
+}
+
+/* Top Level Nav */
+#nav ul ul {
+background: url(../images/light/nav_dropdown.png) no-repeat bottom;
+}
+#nav ul li ul a:hover{
+background: #d6d6d6;
+}
+#nav ul ul ul .nav-first {
+border-top: 1px solid #d6d6d6;
+}
+#nav ul a,
+#nav ul .current-menu-item ul li a,
+#nav ul .current-menu-ancestor ul li a {
+color: #808080;
+}
+
+
+/*************************** Footer ***************************/
+
+/* Footer */
+#footer {
+background: url(../images/light/footer.png);
+color: #666;
+}
+#footer a {
+color: #808080;
+}
+
+/* Footer widgets */
+#footer-widgets {
+border-top: 1px solid #eee;
+}
+
+/* Top Arrow */
+#top_arrow {
+background: url(../images/light/top_arrow.png) no-repeat;
+}
+
+
+/*************************** Slider ***************************/
+
+/* Slider */
+#slider {
+border-left: 1px solid #eee;
+border-right: 1px solid #eee;
+}
+#slider-top {
+background: #d6d6d6;
+}
+.nivo-controlNav {
+background: #ebebeb;
+border-left: 1px solid #eee;
+}
+.nivo-controlNav a {
+background: #ebebeb url(../images/light/slider_nav.png) repeat-x;
+border-top: 1px solid #eee;
+color: #cacaca;
+}
+.nivo-controlNav a:hover {
+background: #ffffff;
+}
+.nivo-controlNav a.active {
+background: #ffffff;
+color: #808080;
+}
+.read-on-link {
+color: #808080;
+background: #ffffff;
+}
+.read-on-link:hover {
+color: #000000;
+}
+
+
+/*************************** Page/Post Styling ***************************/
+
+/* Page */
+.page-title {
+border-bottom: 1px solid #d6d6d6;
+}
+
+/* Search Page */
+#search-results {
+border-bottom: 1px solid #d6d6d6;
+}
+
+
+/*************************** Blog Template ***************************/
+
+.read-on {
+color: #808080;
+}
+
+
+/*************************** Shortcodes: Contact Form ***************************/
+
+#contact-form .loader {
+background: url(../images/light/loader.gif) no-repeat right center;
+}
+
+
+/*************************** Shortcodes: Buttons ***************************/
+
+.post-button {
+color: #808080;
+}
+.post-button:hover {
+background: #d6d6d6;
+}
+
+
+/*************************** Shortcodes: Toggle Boxes ***************************/
+
+h4.toggle {
+background: url(../images/light/toggle_down.png) no-repeat left 4px;
+}
+
+h4.toggle-active {
+background: url(../images/light/toggle_up.png) no-repeat left 4px;
+}
+
+
+/*************************** Shortcodes: Dividers ***************************/
+
+.divider {
+border-top: 1px solid #d6d6d6;
+}
+
+
+/*************************** Shortcodes: Blockquotes ***************************/
+
+blockquote, .blockquote-right, .blockquote-left {
+background: transparent url(../images/light/bq.png) left top no-repeat;
+}
+
+/*************************** Review List Categories ***************************/
+
+#review-list li {
+border-bottom: 1px solid #d6d6d6;
+}
+
+
+/*************************** Review Page ***************************/
+
+/* Review Ratings */
+#review-page-our-rating {
+border-bottom: 1px solid #d6d6d6;
+}
+#review-page-user-rating .ratingmulti,
+#review-page-user-rating .ratingmulti table,
+#review-page-image .ratingmulti td,
+.gdmultitable {
+background: #f7f7f7 !important;
+color: #808080 !important;
+}
+#review-page-user-rating .ratingbutton {
+color: #808080;
+}
+#review-page-user-rating .ratingbutton.gdactive,
+#review-page-user-rating .ratingbutton.gdactive a {
+color: #808080;
+background: #d6d6d6;
+}
+
+/* Tabs Box */
+#tabs-box {
+border-top: 1px solid #d6d6d6;
+border-bottom: 1px solid #d6d6d6;
+}
+#tabs-box .tab a {
+color: #808080;
+}
+
+
+/*************************** Widgets ***************************/
+
+/* General Widgets */
+.widget {
+border-left: 1px solid #eee;
+border-right: 1px solid #eee;
+border-bottom: 1px solid #eee;
+background: #fefefe url(../images/light/widget_bg.png) no-repeat;
+}
+.widget a {
+color: #808080;
+}
+.sidebar-home h3 {
+background: url(../images/light/widget_header_small.png) no-repeat;
+}
+.sidebar-other h3 {
+background: url(../images/light/widget_header_large.png) no-repeat;
+}
+
+/* Recent Comments */
+#recent-comments-widget a {
+color: #000000;
+}
+#recent-comments-widget a:hover {
+color: #808080;
+}
+
+
+/*************************** Review Boxes Widget ***************************/
+
+/* Single Review Box */
+.review-display {
+background: url(../images/light/review_box.png) no-repeat top;
+}
+.review-box-bottom {
+background: url(../images/light/review_box.png) no-repeat bottom;
+}
+.review-box-text {
+color: #808080;
+}
+.review-box-text a {
+color: #808080;
+}
+
+
+/*************************** User Profile ***************************/
+
+/* Profile Recent Posts & Comments */
+.profile-list .row {
+border-bottom: 1px solid #d6d6d6;
+}
+
+
+/*************************** Comments Page ***************************/
+
+/* User Comments */
+#comments-title {
+background: url(../images/light/comment_header.png) no-repeat;
+}
+#comments-title h3 {
+color: #808080;
+}
+#comments-title span a {
+color: #808080;
+}
+.comment-arrow {
+background: url(../images/light/comment_arrow.png) no-repeat;
+}
+.mtrow {
+background-color: #fff !important;
+}
+.mtrow td {
+color: #808080 !important;
+}
+
+/* Comment Form */
+#commentform {
+border-top: 1px solid #d6d6d6;
+}
+#respond h3 {
+color: #808080;
+}
+
+
+/*************************** Page Navigation ***************************/
+
+.wp-pagenavi {
+padding: 20px 0 0 0;
+float: right;
+}
+.wp-pagenavi span,
+.wp-pagenavi a,
+.wp-pagenavi.post-navi a span {
+color: #808080;
+border: 1px solid #c0c0c0;
+background-color: #eee;
+background-image: -moz-linear-gradient(top, #f7f7f7, #eee);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f7f7f7), to(#eee));
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#f7f7f7, endColorstr=#eeeeee);
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#f7f7f7, endColorstr=#eeeeee)";
+}
+.wp-pagenavi .current,
+.wp-pagenavi .page:hover,
+.wp-pagenavi.post-navi span,
+.wp-pagenavi.post-navi a span:hover {
+color: #fff;
+background-color: #808080;
+background-image: -moz-linear-gradient(top, #c0c0c0, #808080);
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c0c0c0), to(#808080));
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#c0c0c0, endColorstr=#808080);
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#c0c0c0, endColorstr=#808080)";
+}
+
+
+/*************************** BuddyPress ***************************/
+
+div.item-list-tabs  {
+background: #f7f7f7;
+}
+
+div#subnav.item-list-tabs, div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, span.activity, div#message p, form#whats-new-form #whats-new-textarea, form#whats-new-form textarea, #container tr, .activity-list div.activity-meta a.acomment-reply, .activity-list div.activity-meta a {
+background: #eaeaea !important;
+}
+div.activity-comments form .ac-textarea, div#user-pag.pagination, .friends div.pagination, .mygroups div.pagination, .myblogs div.pagination, noscript div.pagination {
+background: #d6d6d6;
+border: 0 !important;
+}
+div.item-list-tabs ul li.selected a, div.item-list-tabs ul li.current a, span.activity, div#message p, form#whats-new-form textarea, .activity-list div.activity-meta a.acomment-reply, .activity-list div.activity-meta a, div.activity-comments form textarea {
+color: #808080 !important;
+}
+span.activity, div#message p, form#whats-new-form #whats-new-textarea, #container td, #container div, div.activity-comments form.ac-form, ul.item-list li, .activity-list div.activity-meta a.acomment-reply, .activity-list div.activity-meta a {
+border-color: #ccc !important;
+}
+.button {
+background: url(../images/light/widget_header_large.png) no-repeat center center;
+color: #808080;
+border: 1px solid #888;
+}
+.button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+background: #c0c0c0;
+color: #ffffff;
+}
+
+ul li.loading a {
+background-image: url(../images/light/loader.gif) !important;
+background-position: 92% 50% !important;
+background-repeat: no-repeat !important;
+}
+
+.ajax-loader {
+background: url(../images/loader.gif) center left no-repeat !important;
+}
+
+a.loading {
+background-image: url(../images/light/loader.gif) !important;
+background-position: 95% 50% !important;
+background-repeat: no-repeat !important;
+}
+
+div.activity-comments form.loading {
+background-image: url(../images/light/loader.gif) !important;
+background-position: 2% 95% !important;
+background-repeat: no-repeat !important;
+}
+
+span.highlight a:hover {
+color: #808080;
+}
+
+.activity-list li.load-more {
+background: #f1f1f1 !important;
+}
+.activity-list li.load-more a {
+color: #808080;
+}
+
+table tr td.label {
+border-right: 1px solid #d6d6d6;
+}
+
+#container table tr.alt {
+background: #f1f1f1;
+}
+
+div.messages-options-nav {
+background: #f1f1f1;
+}
+
+div#message-thread div.message-box {
+background: #f1f1f1 !important;
+}
+
+div.activity-comments > ul {
+background: #f1f1f1;
+}
+
+div.pagination {
+background: #eaeaea;
+}
+div.pagination#user-pag, .friends div.pagination,
+.mygroups div.pagination, .myblogs div.pagination, noscript div.pagination {
+background: #f1f1f1;
+}
+ul#topic-post-list li.alt {
+background: #f1f1f1;
+}
+
+div.activity-comments form.ac-form {
+background: #f1f1f1;
+}
+div.activity-comments form .ac-textarea {
+border: 1px solid #d6d6d6 !important;
+background: #fff !important;
+}
+div.activity-comments form textarea {
+color: #808080;
+background: #fff;
+}
+div.ac-reply-avatar img {
+border: 2px solid #fff !important;
+}
+
+.activity-list .activity-content img.thumbnail {
+border: 1px solid #d6d6d6;
+}
+
+table.forum tr.sticky td {
+background: #D6D6D6;
+border-color: #888;
+}

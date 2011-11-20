@@ -1,0 +1,119 @@
+/* Meta Group */
+.meta-group {
+float: left;
+width: 100%;
+}
+.meta-group {
+border-bottom: 3px solid #ddd;
+padding-bottom: 10px;
+margin: 5px 0 20px 0;
+}
+.meta-group h3 {
+font-size: 14px !important;
+background: none !important;
+padding: 0 0 10px 0 !important;
+margin: 0 0 15px 0 !important;
+}
+.group-desc {
+font-size: 10px;
+color: #808080;
+line-height: 16px;
+margin-top: -10px;
+padding-bottom: 10px;
+}
+
+/* Meta Box */
+.meta-box {
+float: left;
+width: 31%;
+padding-right: 2%;
+padding-bottom: 10px;
+}
+.meta-box-large {
+float: left;
+width: 100%;
+padding-bottom: 10px;
+}
+.meta-box strong {
+font-size: 11px;
+padding-bottom: 5px;
+}
+.meta-desc {
+font-size: 10px;
+padding-top: 5px;
+color: #808080;
+line-height: 16px;
+}
+.meta-box input[type="text"], .meta-box select, .meta-box textarea, .meta-box textarea {
+margin-top: 5px;
+font-size: 11px !important;
+width: 90%;
+}
+.meta-box.meta-box-large textarea {
+height: 200px;
+}
+.meta-box input[type="checkbox"] {
+border: 0;
+}
+.meta-box input[type="text"].uploadbutton {
+font-size: 11px;
+width: 60%;
+}
+.meta-box input[type="text"].small-textbox {
+width: 45px;
+}
+
+/* Meta Box Align */
+.meta-box-align {
+float: left;
+position: relative;
+margin: 0;
+padding: 0 0 10px 10px;
+}
+
+/* General */
+.divider {
+clear: both;
+width: 100%;
+height: 1px;
+line-height: 1px;
+padding: 5px 0;
+margin: 0;
+border-top: 1px solid #ddd;
+}
+.clear {
+clear: both;
+line-height: 0;
+padding: 0;
+margin: 0;
+height: 0;
+display:block;
+font-size:0;
+width:100%;
+}
+
+/* Slider Sorting List */
+#slide-list {
+margin-top: 20px;
+}
+#slide-list li {
+padding: 10px;	
+width: 50%;	
+font-weight: bold;
+background: #f0f0f0;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e7e7e7');
+background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+background: -moz-linear-gradient(top,  #f7f7f7,  #e7e7e7);
+cursor: move;
+border: 1px solid #ddd;
+border-raidus: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+#slide-list li .image {
+float: left;
+margin-right: 10px;
+}
+#loading-animation {
+display: none;
+}
