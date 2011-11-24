@@ -60,7 +60,7 @@ $stars = 'reviewit_stars_default';
 
 			<div class="comment-author">
 
-				<?php printf(__('%s'), comment_author_link()) ?> <?php echo gp_says; ?>
+				<?php printf(__('%s'), comment_author_link($comment->comment_ID)) ?> <?php echo gp_says; ?>
 
 				<?php if(is_singular('review')) { ?>
 
@@ -194,58 +194,68 @@ $stars = 'reviewit_stars_default';
 <!--This is to get the reviews from the current logged in user friends-->
 <div id="comments">
 <?php if (has_term('In Theatres', 'review_categories') ) {?>
-			<div id="comments-title"><h3>Friend's Reviews</h3></div>
-			<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
-			<div id="comments-title"><h3>Friend's Comments</h3></div>
-			<?php } else { ?>
+            <div id="comments-title"><h3>Friend's Reviews</h3></div>
+    <?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
+            <div id="comments-title"><h3>Friend's Comments</h3></div>
+    <?php } else { }
+$frndcomment_count = 0;
+global $wp_query;
+//$mycomments = get_comments('post_id='.$post->ID);
+$mycomments = $wp_query->comments;
+if ($mycomments) {
+    if(is_user_logged_in()) {
+        
+        $comment_array = array();
+        global $current_user;
+        get_currentuserinfo();
+        $myfids=friends_get_friend_user_ids($current_user->ID);
+        if ( empty( $myfids ) ) { ?>
+            <ul>
+            <li><?php echo 'Add friends to flixmouth network to view their reviews';  ?></li>
+            </ul>
+        <?php } else {
+                $args_frnd = array('walker' => null, 'max_depth' => '', 'style' => 'ul', 'callback' => null, 'end-callback' => null, 'type' => 'all',
+                'page' => '', 'per_page' => '', 'avatar_size' => 32, 'reverse_top_level' => null, 'reverse_children' => '');
+                if ( get_option('thread_comments') )
+                        $args_frnd['max_depth'] = get_option('thread_comments_depth');
+                 else
+                        $args_frnd['max_depth'] = -1;
+                foreach ($mycomments as $mycomment) {
+                       if(in_array($mycomment->user_id,$myfids)){
+                       $frndcomment_count = $frndcomment_count + 1;
+                       array_push($comment_array,$mycomment);
+                           ?>
+                              
+                                    <?php //comment_template($mycomment,$args_frnd,1); ?>
+                              
+                            <?php  } // end of if(in array)
+                }//end of foreach
+                if($frndcomment_count >0) {
+                ?>
+                   <ol id="commentlist">
+			<?php wp_list_comments('callback=comment_template&reverse_top_level=true',$comment_array); ?>
+		</ol>
+      <?php  }}//end of else
 
-			<?php } $frndcomment_count = 0;?>
-<?php $mycomments = get_comments('post_id='.$post->ID); ?>
-<?php if ($mycomments) { ?>
+    }//end of if user logged in
 
-<?php
-global $current_user;
-get_currentuserinfo();
-$myfids=friends_get_friend_user_ids($current_user->ID);
-if ( empty( $myfids ) )
-{ ?>
-<ul>
-	<li><?php echo 'Add friends to flixmouth network to view their reviews';  ?></li>
-</ul>
-<?php } else {
-   $args_frnd = array('walker' => null, 'max_depth' => '', 'style' => 'ul', 'callback' => null, 'end-callback' => null, 'type' => 'all',
-	'page' => '', 'per_page' => '', 'avatar_size' => 32, 'reverse_top_level' => null, 'reverse_children' => '');
-   if ( get_option('thread_comments') )
-	$args_frnd['max_depth'] = get_option('thread_comments_depth');
-   else
-        $args_frnd['max_depth'] = -1;
-   
-   foreach ($mycomments as $mycomment) {
-   if(is_user_logged_in()) {
-   if(in_array($mycomment->user_id,$myfids)){
-   $frndcomment_count = $frndcomment_count + 1;
-       ?>
-            <ol id="commentlist">
-                <?php comment_template($mycomment,$args_frnd,1); ?>
-            </ol>
-	<?php  }}}}} else { ?>
-
-<?php } if($frndcomment_count == 0) { ?>
-<?php if (has_term('In Theatres', 'review_categories') ) {?>
+}
+if($frndcomment_count == 0) {
+    if (has_term('In Theatres', 'review_categories') ) {?>
 			<ul>
-	<li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
-	</ul>
-	<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
+                        <li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
+                        </ul>
+    <?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
 			<ul>
-	<li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
-	</ul>
-	<?php } elseif ( $slug == movie-forum ) {?>
+                        <li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
+                        </ul>
+    <?php } elseif ( $slug == movie-forum ) {?>
 			
-	<?php } else { ?>
+            <?php } else { ?>
 			
-	<?php } ?>
+            <?php } ?>
 	
-                 <?php } ?>
+        <?php } ?>
 
 </div>
 <!--End Friends Comments-->

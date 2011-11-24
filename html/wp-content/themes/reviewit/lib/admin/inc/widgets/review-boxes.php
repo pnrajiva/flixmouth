@@ -134,7 +134,7 @@ class Review_Boxes extends WP_Widget {
 			
 						<?php if(get_post_meta($post->ID, 'ghostpool_thumbnail', true)) { ?>
 						
-							<img src="<?php if($theme_timthumb == "0") { ?><?php bloginfo('template_directory'); ?>/lib/scripts/timthumb.php?src=<?php } ?><?php echo get_post_meta($post->ID, 'ghostpool_thumbnail', true); ?><?php if($theme_timthumb == "0") { ?>&amp;h=120&amp;w=212&amp;zc=1<?php } ?>" alt="" class="image" />
+							<img src="<?php if($theme_timthumb == "0") { ?><?php bloginfo('template_directory'); ?>/lib/scripts/timthumb.php?src=<?php } ?><?php echo get_post_meta($post->ID, 'ghostpool_thumbnail', true); ?><?php if($theme_timthumb == "0") { ?>&amp;h=180&amp;w=212&amp;zc=1<?php } ?>" alt="" class="image" />
 										
 						<?php     } else { ?>
 						
