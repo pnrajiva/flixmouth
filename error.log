@@ -1,0 +1,105 @@
+[Thu Nov 24 20:07:05 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.5 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Thu Nov 24 20:56:48 2011] [notice] Graceful restart requested, doing restart
+[Thu Nov 24 20:56:48 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+[Thu Nov 24 20:56:48 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.5 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Thu Nov 24 21:02:01 2011] [notice] Graceful restart requested, doing restart
+[Thu Nov 24 21:02:02 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+[Thu Nov 24 21:02:02 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.5 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Thu Nov 24 21:51:10 2011] [error] [client 66.249.71.194] File does not exist: /var/www/robots.txt
+[Thu Nov 24 21:51:11 2011] [error] [client 66.249.71.194] File does not exist: /var/www/reviews
+[Thu Nov 24 22:02:31 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Thu Nov 24 22:57:48 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Thu Nov 24 23:17:56 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Thu Nov 24 23:18:17 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Thu Nov 24 23:36:55 2011] [error] [client 220.226.103.254] File does not exist: /var/www/w00tw00t.at.blackhats.romanian.anti-sec:)
+[Thu Nov 24 23:36:55 2011] [error] [client 220.226.103.254] File does not exist: /var/www/phpMyAdmin
+[Thu Nov 24 23:36:55 2011] [error] [client 220.226.103.254] File does not exist: /var/www/phpmyadmin
+[Thu Nov 24 23:36:55 2011] [error] [client 220.226.103.254] File does not exist: /var/www/pma
+[Thu Nov 24 23:36:56 2011] [error] [client 220.226.103.254] File does not exist: /var/www/myadmin
+[Thu Nov 24 23:36:56 2011] [error] [client 220.226.103.254] File does not exist: /var/www/MyAdmin
+[Fri Nov 25 01:29:55 2011] [error] [client 66.249.71.194] File does not exist: /var/www/category
+[Fri Nov 25 02:23:29 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 02:30:56 2011] [error] [client 58.18.172.206] File does not exist: /var/www/w00tw00t.at.blackhats.romanian.anti-sec:)
+[Fri Nov 25 02:30:57 2011] [error] [client 58.18.172.206] File does not exist: /var/www/phpMyAdmin
+[Fri Nov 25 02:30:58 2011] [error] [client 58.18.172.206] File does not exist: /var/www/phpmyadmin
+[Fri Nov 25 02:30:58 2011] [error] [client 58.18.172.206] File does not exist: /var/www/pma
+[Fri Nov 25 02:31:01 2011] [error] [client 58.18.172.206] File does not exist: /var/www/myadmin
+[Fri Nov 25 02:31:01 2011] [error] [client 58.18.172.206] File does not exist: /var/www/MyAdmin
+[Fri Nov 25 02:34:43 2011] [error] [client 174.17.107.189] File does not exist: /var/www/phpmyadmin
+[Fri Nov 25 02:34:43 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 02:38:06 2011] [error] [client 211.68.122.12] File does not exist: /var/www/user
+[Fri Nov 25 02:40:22 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 02:49:01 2011] [notice] Graceful restart requested, doing restart
+[Fri Nov 25 02:49:01 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+[Fri Nov 25 02:49:01 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 02:50:31 2011] [notice] caught SIGTERM, shutting down
+[Fri Nov 25 02:50:32 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 02:51:05 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 02:52:32 2011] [notice] Graceful restart requested, doing restart
+[Fri Nov 25 02:52:32 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+[Fri Nov 25 02:52:32 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 02:58:06 2011] [notice] Graceful restart requested, doing restart
+[Fri Nov 25 02:58:06 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Nov 25 02:58:06 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 03:35:59 2011] [error] [client 188.163.65.149] File does not exist: /var/www/register, referer: http://flixmouth.com/register/
+[Fri Nov 25 03:39:29 2011] [notice] Graceful restart requested, doing restart
+[Fri Nov 25 03:39:29 2011] [error] (9)Bad file descriptor: apr_socket_accept: (client socket)
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Nov 25 03:39:29 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 03:44:46 2011] [error] [client 174.17.107.189] File does not exist: /var/www/phpmyadmin
+[Fri Nov 25 03:44:46 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 03:46:07 2011] [notice] caught SIGTERM, shutting down
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Nov 25 03:46:08 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 03:46:30 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 03:46:43 2011] [error] [client 174.17.107.189] File does not exist: /var/www/phpmyadmin
+[Fri Nov 25 03:46:43 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Fri Nov 25 03:53:53 2011] [notice] caught SIGTERM, shutting down
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Nov 25 03:53:54 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 03:58:42 2011] [notice] caught SIGTERM, shutting down
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Nov 25 03:58:43 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Fri Nov 25 05:08:47 2011] [error] [client 61.190.172.2] File does not exist: /var/www/user
+[Fri Nov 25 05:25:40 2011] [error] [client 66.249.71.194] File does not exist: /var/www/register
+[Fri Nov 25 07:23:09 2011] [error] [client 66.249.71.194] script '/var/www/Pra_Session_Button_Language.php' not found or unable to stat
+[Fri Nov 25 08:31:04 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 08:59:01 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 09:22:49 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 09:23:47 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 09:49:49 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 10:14:22 2011] [error] [client 66.249.71.194] File does not exist: /var/www/robots.txt
+[Fri Nov 25 10:14:22 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 12:07:57 2011] [error] [client 66.249.71.194] File does not exist: /var/www/robots.txt
+[Fri Nov 25 12:07:57 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 13:03:13 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 13:58:16 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 14:11:34 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 14:36:27 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 14:53:06 2011] [error] [client 66.249.71.194] File does not exist: /var/www/category-2
+[Fri Nov 25 15:48:07 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 16:30:03 2011] [error] [client 180.76.5.97] File does not exist: /var/www/review
+[Fri Nov 25 16:44:04 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 17:38:13 2011] [error] [client 66.249.71.194] File does not exist: /var/www/wp-content
+[Fri Nov 25 18:34:51 2011] [error] [client 66.249.71.194] File does not exist: /var/www/category-2
+[Fri Nov 25 19:29:54 2011] [error] [client 66.249.71.194] File does not exist: /var/www/category-2
+[Fri Nov 25 20:30:53 2011] [error] [client 180.76.6.29] File does not exist: /var/www/movie-forum
+[Fri Nov 25 23:03:42 2011] [error] [client 66.249.71.194] File does not exist: /var/www/reviews
+[Sat Nov 26 00:26:24 2011] [error] [client 180.76.5.170] script '/var/www/xmlrpc.php' not found or unable to stat
+[Sat Nov 26 02:50:10 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Sat Nov 26 02:51:10 2011] [error] [client 174.17.107.189] File does not exist: /var/www/favicon.ico
+[Sat Nov 26 03:01:03 2011] [notice] caught SIGTERM, shutting down
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Sat Nov 26 03:01:04 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Sat Nov 26 03:01:42 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:10:23 2011] [error] [client 180.76.5.113] File does not exist: /var/www/html/screenwriter
+[Sat Nov 26 03:13:14 2011] [notice] caught SIGTERM, shutting down
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Sat Nov 26 03:13:15 2011] [notice] Apache/2.2.14 (Ubuntu) PHP/5.3.2-1ubuntu4.10 with Suhosin-Patch mod_ssl/2.2.14 OpenSSL/0.9.8k configured -- resuming normal operations
+[Sat Nov 26 03:13:40 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:21:42 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:35:02 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:36:16 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:47:11 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
+[Sat Nov 26 03:51:23 2011] [error] [client 174.17.107.189] File does not exist: /var/www/html/favicon.ico
