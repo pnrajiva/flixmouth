@@ -62,7 +62,15 @@ class Review_Lists extends WP_Widget {
 		'nopaging' => 0,
 		'post_status' => 'publish',
 		'post_type' => 'review',
-		'review_categories' => $cat
+		//'review_categories' => $cat
+                'tax_query' =>array(
+                    array(
+                        'taxonomy'=>'review_categories',
+                        'field'=>'slug',
+                        'terms'=>array($cat,$lang),
+                        'operator'=>'AND'
+                    )
+                )
 		)); 
 
 		// Review Stars
@@ -70,15 +78,19 @@ class Review_Lists extends WP_Widget {
 
 		// Rating Type
 		//if($rating_type == "review") { $gd_multi_id = get_post_meta($post->ID, 'ghostpool_our_rating_id', true); } elseif($rating_type == "rating") { $gd_multi_id = get_post_meta($post->ID, 'ghostpool_your_rating_id', true); } else { $gd_multi_id = 0; }
-		
-		if (have_posts()) : ?>
+		?>
+<br>
+<br>
+
+
+		<?php if (have_posts()) : ?>
 			
-			<ol class="review-list-widget">
+			<ul class="review-list-widget">
 			
 			<?php while (have_posts()) : the_post(); ?>	
                                  <!-- Start PR - 10/29/11 - Language select -->
                                 <?php
-                                    $mus_display = 'no';
+                                   /* $mus_display = 'no';
                                     $terms = wp_get_post_terms($post->ID,'review_categories');
                                     foreach ($terms as $term) {
                                       
@@ -86,9 +98,9 @@ class Review_Lists extends WP_Widget {
                                         {
                                             $mus_display = 'yes';
                                         }
-                                    }
+                                    }*/
                                 ?> <!--end PR - 10/29/11 - Language select-->
-                                 <?php if($mus_display == "yes") {?>  <!--PR - 10/29/11 - Language select-->
+                                 <?php //if($mus_display == "yes") {?>  <!--PR - 10/29/11 - Language select-->
 				<li>
 				
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -96,7 +108,7 @@ class Review_Lists extends WP_Widget {
 					<?php //echo(get_the_term_list($post->ID, 'genre', '<br/><span> ', ', ', '</span>')); ?>
 					
 					<div class="review-list-widget-stars">
-                                                <?php if($title == "In Theatres") { ?>
+                                                <?php if($cat == "In Theatres") { ?>
 						<?php if($rating_type == "disable") {} elseif($rating_type == "review") { ?>
 						
 							<!--Our Rating-->
@@ -124,10 +136,10 @@ class Review_Lists extends WP_Widget {
 					</div>
 				
 				</li>
-				<?php } ?> <!--PR - 10/29/11 - closing tag for if of mus display-->
+				<?php //} ?> <!--PR - 10/29/11 - closing tag for if of mus display-->
 			<?php endwhile; ?>
 			
-			</ol>
+			</ul>
 			
 			<?php if($see_all) { ?><a href="<?php echo($see_all); ?>" class="see-all-lists"><?php echo gp_see_all; ?> &raquo;</a><?php } ?>
 			
@@ -137,7 +149,7 @@ class Review_Lists extends WP_Widget {
 	
 		<?php endif; wp_reset_query(); 
 		
-		echo $after_widget; 
+		echo $after_widget;
 		// End Widget
 	}
 

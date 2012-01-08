@@ -100,23 +100,34 @@ if ( !$user->ID ) {
 $location = empty($_POST['redirect_to']) ? get_comment_link($comment_id) : $_POST['redirect_to'] . '#comment-' . $comment_id;
 $location = apply_filters('comment_post_redirect', $location, $comment);
 //----start of facebook neews feed code ---
+
 if(class_exists('Facebook')){
 
 }
 else{
+
     require_once('./facebook.php');
-}
-try{
-$comment_content1 = strip_tags(substr(apply_filters('get_comment_text', $comment_content), 0, 100));
-$location_post = get_permalink( $comment_post_ID );
-$linkname = get_the_title($comment_post_ID);
-    $facebook = new Facebook(array('appId'=>'293620923982816', 'secret'=>'8d2cd043acd87fbf7e4d66e669aac92f','cookie'=>true));
-$facebook->api('/me/links/', 'post', array('access_token'=>$facebook->access_token,'message'=>$comment_content1.' ..... <click on the below link for more>', 'link'=>$location_post, 'name'=>$linkname ));
-    }
-catch(FacebookApiException $e){
 
 }
+try{
+
+    $comment_content1 = strip_tags(substr(apply_filters('get_comment_text', $comment_content), 0, 100));
+
+$location_post = get_permalink( $comment_post_ID );
+
+$linkname = get_the_title($comment_post_ID);
+
+    $facebook = new Facebook(array('appId'=>'293620923982816', 'secret'=>'8d2cd043acd87fbf7e4d66e669aac92f','cookie'=>true));
+
+$facebook->api('/me/links/', 'post', array('access_token'=>$facebook->access_token,'message'=>$comment_content1.' ..... <click on the below link for more>', 'link'=>$location_post, 'name'=>$linkname ));
+
+    }
+catch(FacebookApiException $e){
+    echo "Something has Gone wrong";
+}
+
 //--- End of facebook news feed code --
 wp_redirect($location);
+
 exit;
 ?>

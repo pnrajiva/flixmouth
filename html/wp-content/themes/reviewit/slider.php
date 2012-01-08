@@ -9,9 +9,11 @@ jQuery(window).load(function() {
 		directionNav: false,
 		directionNavHide: false,
 		keyboardNav: false,
-		pauseOnHover: false,
+		pauseOnHover: true,
 		controlNavThumbs: true,
-		controlNavThumbsFromRel: true,
+		controlNavThumbsFromRel: false,
+                controlNavThumbsSearch: '.jpg',
+                controlNavThumbsReplace: '.jpg',
 		manualAdvance: <?php if($theme_slider_auto_rotation == "0") { ?>false<?php } else { ?>true<?php } ?>,
 		captionOpacity: 0
 	});

@@ -54,7 +54,7 @@ class BP_Core_Members_Widget extends WP_Widget {
 
 				<?php endif; ?>
 			</div>
-
+                       
 			<ul id="members-list" class="item-list">
 				<?php while ( bp_members() ) : bp_the_member(); ?>
 					<li class="vcard">

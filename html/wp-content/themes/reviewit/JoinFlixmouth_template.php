@@ -18,9 +18,8 @@ $v1 =$_SESSION['join_flix_userid'];
 <?php if(is_page()) echo '<div id="content" class="column">'; ?>
 <br/>
 <div id="page-wrapper">
-<?php echo $v1; ?>
 <h2>Join Flixmouth!</h2>
-<p>Click below to accept your friend's request and join flixmouth. Its that simple!!</p>
+<p>Click below to accept your friend's request and to join flixmouth. Its that simple!!</p>
 <br/>
 <?php jfb_output_facebook_btn(); ?>
 <br/>

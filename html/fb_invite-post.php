@@ -34,13 +34,12 @@ $linkname = 'Friend Request';
 $mymessage= 'Has sent you a friend request on flixmouth';
 $facebook = new Facebook(array('appId'=>'293620923982816', 'secret'=>'8d2cd043acd87fbf7e4d66e669aac92f','cookie'=>true));
 $myfriends = $facebook->api('/me/friends','get',array('access_token'=>$facebook->access_token));
-echo count($myfriends);
-$facebook->api('/me/feed/', 'post', array('access_token'=>$facebook->access_token,'to'=>$myfriends,'message'=>$mymessage, 'link'=>$location_post, 'name'=>$linkname ));
+$facebook->api('/me/feed/', 'post', array('access_token'=>$facebook->access_token,'to'=>$myfriends,'message'=>$mymessage, 'link'=>$location_post, 'name'=>$linkname, 'picture'=>'http://www.flixmouth.com/wp-content/uploads/flixmouth_fb.jpg' ));
 }
 catch(FacebookApiException $e){
  echo "error";
 }
 //--- End of facebook news feed code --
-//header("Location: http://www.flixmouth.com/fb-invite/");
-//exit;
+header("Location: http://www.flixmouth.com/fb-invite/");
+exit;
 ?>

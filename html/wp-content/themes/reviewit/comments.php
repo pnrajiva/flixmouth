@@ -123,32 +123,30 @@ $stars = 'reviewit_stars_default';
 
 				<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
 
-					<h4><?php comment_form_title('Prerelease Comment'); ?></h4>
+					<h4><?php comment_form_title('Add A Post'); ?></h4>
 				<?php } else { ?>
-						<h4><?php comment_form_title('Comment'); ?></h4>
+						<h4><?php comment_form_title('Add Your Rating'); ?></h4>
 				<?php } ?>
 
 
 				<?php if(get_option('comment_registration') && !$user_ID) { ?>
 
 					<p><?php echo gp_login_to_comment ?></p>
-
+                                        <p> <?php jfb_output_facebook_btn(); ?></p>
 				<?php } else { ?>
 
 					<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
 
 					<?php if ($user_ID) { ?>
 
-						<p><?php echo gp_logged_in_as ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> <a href="<?php echo wp_logout_url(get_permalink()); ?>">(<?php echo gp_logout ?>)</a></p>
+					<!--	<p><?php echo gp_logged_in_as ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> <a href="<?php echo wp_logout_url(get_permalink()); ?>">(<?php echo gp_logout ?>)</a></p> -->
 
 					<?php } else { ?>
-
-						<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /> <label for="author"><?php echo gp_name ?> <span class="required"><?php if ($req) echo "*"; ?></span></label></p>
+                                                <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /> <label for="author"><?php echo gp_name ?> <span class="required"><?php if ($req) echo "*"; ?></span></label></p>
 
 						<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /> <label for="email"><?php echo gp_email ?> <span class="required"><?php if ($req) echo "*"; ?></span></label></p>
 
 						<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" /> <label for="url"><?php echo gp_website ?></label></p>
-
 					<?php } ?>
 
 					<?php if(is_singular('review')) { if(get_post_meta($post->ID, 'ghostpool_your_rating_comment', true)) { ?>
@@ -159,15 +157,49 @@ $stars = 'reviewit_stars_default';
 								<div class="clear"></div>
 								<?php if(defined('STARRATING_INSTALLED')) { wp_gdsr_comment_integrate_multi_rating(get_post_meta($post->ID, 'ghostpool_your_rating_id', true), 0, 0, $stars, 20); } ?>
 							<?php } else { ?>
-								<?php if(defined('STARRATING_INSTALLED')) { wp_gdsr_comment_integrate_standard_rating(0, $stars, 20); } ?>
+								<?php if(defined('STARRATING_INSTALLED')) { wp_gdsr_comment_integrate_standard_rating(0, $stars, 24); } ?>
 							<?php } ?>
 						</div>
 
 						<div class="clear"></div>
-
+                                               
 					<?php }} ?>
+                                        <script>
+                                                    function clearText(theField)
+                                                    {
+                                                    if(theField.id == 'review'){
+                                                    if ('Add a Review' == theField.value)
+                                                    theField.value = '';
+                                                    }
+                                                    if(theField.id == 'comment'){
+                                                    if ('Write Something...' == theField.value)
+                                                    theField.value = '';
+                                                    }
 
-					<p><textarea name="comment" id="comment" cols="5" rows="7" tabindex="4"></textarea></p>
+                                                    }
+
+                                                    function addText(theField)
+                                                    {
+                                                    if(theField.id == 'review'){
+                                                    if (theField.value == '')
+                                                    theField.value = 'Add a Review';
+                                                    }
+                                                    if(theField.id == 'comment'){
+                                                    if (theField.value == '')
+                                                    theField.value = 'Write Something...';
+                                                    }
+                                                    }
+                                                    </script>
+                                                <?php if (has_term('In Theatres', 'review_categories') ) {?>
+					<p><textarea name="review" id="review" onblur="addText(this);" onfocus="clearText(this);"  cols="5" rows="7" tabindex="4">Add a Review</textarea></p>
+
+				<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
+
+					<p><textarea name="comment" id="comment" onblur="addText(this);" onfocus="clearText(this);"  cols="5" rows="7" tabindex="4">Write Something...</textarea></p>
+				<?php } else { ?>
+						<p><textarea name="review" id="review" onblur="addText(this);" onfocus="clearText(this);"  cols="5" rows="7" tabindex="4">Add a Review</textarea></p>
+				<?php } ?>
+                                                
 
 					<input name="submit" type="submit" id="submit" tabindex="5" value="<?php echo gp_submit ?>" />
 					<?php comment_id_fields(); ?>
@@ -210,9 +242,12 @@ if ($mycomments) {
         get_currentuserinfo();
         $myfids=friends_get_friend_user_ids($current_user->ID);
         if ( empty( $myfids ) ) { ?>
-            <ul>
-            <li><?php echo 'Add friends to flixmouth network to view their reviews';  ?></li>
-            </ul>
+            <p>
+            <?php echo 'Invite friends to your flixmouth network to view their reviews';  ?>
+            </p>
+            <p>
+                <a href="<?php bloginfo('url'); ?>/fb-invite/"><button type="button" onclick="window.location('http://www.flixmouth.com/fb-invite/')">Invite Friends</button></a>
+            </p>
         <?php } else {
                 $args_frnd = array('walker' => null, 'max_depth' => '', 'style' => 'ul', 'callback' => null, 'end-callback' => null, 'type' => 'all',
                 'page' => '', 'per_page' => '', 'avatar_size' => 32, 'reverse_top_level' => null, 'reverse_children' => '');
@@ -238,24 +273,41 @@ if ($mycomments) {
       <?php  }}//end of else
 
     }//end of if user logged in
-
+    else{ ?>
+        <p>Log in to read your friend's reviews</p>
+        <p><?php jfb_output_facebook_btn(); ?></p>
+  <?php  }
+}
+else {
+     if(is_user_logged_in()) { ?>
+        <p>Add a review and your friends will be able to view it!</p>
+  <?php   }
+     else{ ?>
+         <p>Log in to read your friend's reviews</p>
+        <p><?php jfb_output_facebook_btn(); ?></p>
+   <?php  }
 }
 if($frndcomment_count == 0) {
+    if ( !empty( $myfids ) ) {
     if (has_term('In Theatres', 'review_categories') ) {?>
-			<ul>
-                        <li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
-                        </ul>
+			
+        <h3><?php echo 'Be the first among your friends to review this movie!!';  ?></h3>
+                        
     <?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
-			<ul>
-                        <li><?php echo 'Be the first among your friends to review this movie!!';  ?></li>
-                        </ul>
+			<h3>
+                        <?php echo 'Be the first among your friends to share something about this movie!!';  ?>
+                        </h3>
     <?php } elseif ( $slug == movie-forum ) {?>
 			
             <?php } else { ?>
-			
+			<h3>
+                        <?php echo 'Be the first among your friends to review this movie!!';  ?>
+                        </h3>
             <?php } ?>
 	
-        <?php } ?>
+        <?php } 
+        
+        } ?>
 
 </div>
 <!--End Friends Comments-->
@@ -286,11 +338,13 @@ $stars = 'reviewit_stars_default';
 
 				<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
 
-			<div id="comments-title"><h3><?php comments_number('No Comments Yet1..', 'One Comment', '% User Comments'); ?></h3></div>
+			<div id="comments-title"><h3><?php comments_number('No Comments Yet..', 'One Comment', '% User Comments'); ?></h3></div>
+                        <?php } elseif(has_term('Hindi','review_categories')|| has_term('Tamil','review_categories')|| has_term('Malayalam','review_categories')|| has_term('Telugu','review_categories')) { ?>
+                                <div id="comments-title"><h3><?php comments_number('No reviews Yet..', 'One Review', '% User Reviews'); ?></h3></div>
 				<?php } else { ?>
-			<div id="comments-title"><h3><?php comments_number('No Comments Yet2..', 'One Comment', '% User Comments'); ?></h3></div>
+			<div id="comments-title"><h3><?php comments_number('No Comments Yet..', 'One Comment', '% User Comments'); ?></h3></div>
 				<?php } ?>
-
+                
 		<ol id="commentlist">
 			<?php wp_list_comments('callback=comment_template&reverse_top_level=true'); ?>
 		</ol>
@@ -309,13 +363,18 @@ $stars = 'reviewit_stars_default';
 
 	<?php } else { // If there are no comments yet ?>
 	<?php if (has_term('In Theatres', 'review_categories') ) {?>
-			<h3><?php comments_number('No reviews Yet..', 'One Review', '% User Reviews'); ?></h3>
+                        <div id="comments-title"><h3><?php comments_number('No reviews Yet..', 'One Review', '% User Reviews'); ?></h3></div>
+                        <p>Be the first to review this movie!</p>
 	<?php } elseif ( has_term('Coming Soon', 'review_categories')  ) {?>
-			<h3><?php comments_number('No Comments Yet ..', 'One Comment', '% User Comments'); ?></h3>
+               		<div id="comments-title"><h3><?php comments_number('No Comments Yet ..', 'One Comment', '% User Comments'); ?></h3></div>
+                        <p>Be the first to share something interesting about this movie!</p>
+                <?php } elseif(has_term('Hindi','review_categories')|| has_term('Tamil','review_categories')|| has_term('Malayalam','review_categories')|| has_term('Telugu','review_categories')) { ?>
+                      <div id="comments-title"><h3><?php comments_number('No reviews Yet..', 'One Review', '% User Reviews'); ?></h3></div>
+                      <p>Be the first to review this movie!</p>
 	<?php } elseif ( $slug == movie-forum ) {?>
-			<h3><?php comments_number('', '', ''); ?></h3>
+			<h4><?php comments_number('', '', ''); ?></h4>
 	<?php } else { ?>
-			<h3><?php comments_number('', '', ''); ?></h3>
+			<h4><?php comments_number('', '', ''); ?></h4>
 	<?php } ?>
 
 

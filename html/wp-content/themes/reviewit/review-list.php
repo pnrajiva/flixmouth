@@ -148,7 +148,7 @@ if(is_archive() && get_option("permalink_structure")) {
 			
 				</div>
 			
-			<?php } ?>
+                                <?php } ?>
 	
 			<div class="review-list-text">
 			
@@ -156,8 +156,10 @@ if(is_archive() && get_option("permalink_structure")) {
 	
 				<div class="post-meta"> <?php comments_popup_link('No User Reviews', '1 User Review', '% User Reviews', 'comments-link', ''); ?></div>
 				
-				<p><?php echo excerpt(35); ?></p>
 				
+				<p><?php if($theme_review_tag_2 == "0") { echo(get_the_term_list($post->ID, 'genre', ''.$theme_review_tag_2_singular_name.':', ', ', '')); } ?></p>
+                                <p><?php if($theme_review_tag_4 == "0") { echo(get_the_term_list($post->ID, 'director', ''.$theme_review_tag_4_singular_name.':', ', ', '')); } ?></p>
+                                <p><?php if($theme_review_tag_8 == "0") { echo(get_the_term_list($post->ID, 'starring', ''.$theme_review_tag_8_singular_name.':', ', ', '')); } ?>	</p>
 				<!--Our Rating-->
 				<?php if(get_post_meta($post->ID, 'ghostpool_our_rating', true) == "false") {} else { ?>
 					<div class="review-list-ratings">
@@ -185,10 +187,10 @@ if(is_archive() && get_option("permalink_structure")) {
 				<?php } ?>
 
 	
-				
-	
+                                
+                                                                
 			</div>
-			<div class="review-list-wanttosee"><?php if(function_exists(getILikeThis_onlycount)) getILikeThis_onlycount('get'); ?> Want too See</div>
+			<?php if(function_exists(getILikeThis_onlycount)) getILikeThis_onlycount('get'); ?> Want too See
 			</li>
 			
 		<?php endwhile; ?>

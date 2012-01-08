@@ -62,7 +62,7 @@ class Recent_Comments extends WP_Widget {
 							<li>
 								<?php echo get_avatar($comment,$size='50',$default=get_template_directory_uri().'/images/gravatar.gif'); ?>
 								<span class="text">
-									<a href="<?php echo get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID; ?>"><?php echo strip_tags(substr(apply_filters('get_comment_text', $comment->comment_content), 0, 35)); ?>...</a>
+									<a href="<?php echo get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID; ?>"><?php echo strip_tags(substr(apply_filters('get_comment_text', $comment->comment_content), 0, 65)); ?>...</a>
 									<br/><span><?php echo($comment->comment_author) ?> <?php echo gp_on; ?>
 									<?php echo get_the_title($comment->comment_post_ID) ?></span>
 								</span>

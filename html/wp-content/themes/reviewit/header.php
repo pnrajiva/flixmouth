@@ -96,11 +96,10 @@ Click on the link to find the movie's current rating" />
 <?php } else { ?>
 <meta property="og:title" content="Visit Flixmouth" />
 <meta property="og:url" content="<?php bloginfo('url') ?>" />
-<meta property="og:description" content="Your friend has requested you to visit flixmouth.
-flixmouth.com is a community for movie buffs! 
-On Flixmouth.com, you can share movie reviews and ratings with friends, form your movie network, start conversations, initiate and participate in movie discussions with your friends, form fan clubs and much more" />
+<meta property="og:description" content="flixmouth.com is a community for movie buffs! 
+On Flixmouth.com, you can share movie reviews and ratings with friends, form your movie network and find what your friends have to say about recent movies" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://http://www.flixmouth.com/wp-content/uploads/13-07-2011-12715-1-3.jpg" />
+<meta property="og:image" content="http://www.flixmouth.com/wp-content/uploads/flixmouth_fb.jpg" />
 <?php } ?>
 
 
@@ -149,7 +148,8 @@ On Flixmouth.com, you can share movie reviews and ratings with friends, form you
 	
 	
 	<div id="login">
-	<?php if(is_user_logged_in()) { ?>	
+	<?php if(is_user_logged_in()) { ?>
+                <a href="http://www.flixmouth.com/about/what-is-flixmouth/">What is Flixmouth?</a> <span>|</span>
 		<?php global $current_user; get_currentuserinfo(); echo $current_user->display_name; ?> <span>|</span>
 		<?php if(function_exists('bp_get_options_nav')) { ?>
 		<a href="<?php bloginfo('url'); ?>/members/<?php echo $current_user->user_login; ?>/profile"><?php echo gp_profile; ?></a> <span>|</span>		
@@ -159,12 +159,13 @@ On Flixmouth.com, you can share movie reviews and ratings with friends, form you
 		<a href="<?php echo wp_logout_url( get_bloginfo('url') ); ?>"><?php echo gp_logout; ?></a>
 		
 	<?php } else { ?>
+                <a href="http://www.flixmouth.com/about/what-is-flixmouth/">What is Flixmouth?</a> <span>|</span>
 		<a href="#login-box" rel="prettyPhoto">FMLogin</a> <span>|</span>
 		<?php if(function_exists('bp_get_options_nav')) { ?>
-		<a href="register" rel="register"><?php echo gp_register; ?></a> <span>|</span>
+		<a href="<?php bloginfo('url'); ?>/register" rel="register"><?php echo gp_register; ?></a> <span>|</span>
 		 <?php jfb_output_facebook_btn(); ?>
                 <?php } else { ?>
-		<a href="register" rel="register"><?php echo gp_register; ?></a>
+		<a href="<?php bloginfo('url'); ?>/register" rel="register"><?php echo gp_register; ?></a>
 		<?php } ?>
 	<?php } ?>
 	</div>	
@@ -236,7 +237,16 @@ On Flixmouth.com, you can share movie reviews and ratings with friends, form you
 	<!--Begin Slider-->
 	<?php if(function_exists('bp_get_options_nav') && !bp_is_blog_page()) {} else { if((is_home() && $theme_slider_display == "Homepage") OR $theme_slider_display == "All Pages" OR is_page(explode(',',$theme_slider_pages)) OR is_single(explode(',',$theme_slider_posts))) { require('slider.php'); } } ?>
 	<!--End Slider-->
-	
+        <?php if(is_home()) {?>
+        <div id="sidebar" class="sidebar-home">
+                  <div class="widgethead">
+	<?php $instance = array("title" => "Popular In Theatres", "posts_per_page" => 4, "cat" => "In Theatres", "rating_type" => "rating", "gd_sort" => "votes", "gd_order" => "desc", "display" => "compact", "see_all" => "" );
+        $args = array("title" => "Popular In Theatres", "before_title" => "<h3>", "after_title" => "</h3>");
+        $sb = new Review_Lists();
+        $sb->widget($args,$instance); ?>
+            </div>
+            </div>
+        <?php } ?>
 	<!--Begin Header Bottom-->
 	<div id="header-bottom">
 	

@@ -185,6 +185,8 @@ if( $user_login_id )
     
     //Run a hook when an existing user logs in
     do_action('wpfb_existing_user', array('WP_ID' => $user_login_id, 'FB_ID' => $fb_uid, 'facebook' => $facebook, 'WP_UserData' => $user_data) );
+    session_start();//added by prashanth
+    $_SESSION['register_redir'] = 2;//added by prashanth
 }
 
 
@@ -193,6 +195,7 @@ if( $user_login_id )
 //account we register will have a bogus email address (but that's OK, since we still know their Facebook ID)
 if( !$user_login_id )
 {
+    global $bp;
     $jfb_log .= "WP: No user found. Automatically registering (FB_". $fb_uid . ")\n";
     $user_data = array();
     $user_data['user_login']    = "FB_" . $fb_uid;
@@ -230,13 +233,16 @@ if( !$user_login_id )
         try
         {
             $jfb_log .= "FB: Publishing registration news to user's wall.\n";
-            $facebook->api('/me/feed/', 'post', array('access_token' => $facebook->access_token, 'message' => get_option($opt_jfb_stream_content)));
+            $facebook->api('/me/feed/', 'post', array('access_token' => $facebook->access_token, 'message' => get_option($opt_jfb_stream_content), 'link'=>'http://www.flixmouth.com', 'picture'=>'http://www.flixmouth.com/wp-content/uploads/flixmouth_fb.jpg'));
+            
         }
         catch (FacebookApiException $e)
         {
             $jfb_log .= "WARNING: Failed to publish to the user's wall (is your message too long?) (" . $e . ")\n";
         }
     }
+    session_start();//added by prashanth
+    $_SESSION['register_redir'] = 1;//added by prashanth
 }
 
 //Tag the user with our meta so we can recognize them next time, without resorting to email hashes
@@ -274,14 +280,20 @@ $jfb_log .= "   FB User : " . $fbuser['name'] . " (" . $fbuser["profile_url"] . 
 $jfb_log .= "   Redirect: " . $redirectTo . "\n";
 j_mail("FB Login: " . $user_login_name . " -> " . get_bloginfo('name'));
 
-
-//Redirect the user back to where they were
+$register_redir_temp = $_SESSION['register_redir']; //added by prashanth
+//Redirect to invite page for the first time registered user --  added by prashanth
+if($register_redir_temp == 1){
+    header("Location: http://www.flixmouth.com/fb-invite/");
+}
+else{//Redirect the user back to where they were
 $delay_redirect = get_option($opt_jfb_delay_redir);
 if( !isset($delay_redirect) || !$delay_redirect )
 {
     header("Location: " . $redirectTo);
     exit;
 }
+}
+
 ?>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
